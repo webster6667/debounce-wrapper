@@ -71,7 +71,10 @@ let result = [],
     callFnWithDebounce(1)
     setTimeout(() => callFnWithDebounce(2),300)
 
-console.log(result)
+    setTimeout(() => console.log(result),350)
+
+
+
 
 ```
 
@@ -89,7 +92,7 @@ let result = [],
     callFnWithDebounce(1)
     setTimeout(() => callFnWithDebounce(2),300)
 
-    console.log(result)
+    setTimeout(() => console.log(result),350)
 
 ```
 
@@ -109,7 +112,7 @@ Connect to html file ```<script src="https://cdn.jsdelivr.net/npm/debounce-wrapp
     callFnWithDebounce(1)
     setTimeout(() => callFnWithDebounce(2),300)
 
-    console.log(result)
+    setTimeout(() => console.log(result),350)
 
 </script>
 ```
@@ -131,7 +134,7 @@ requirejs(['debounce-wrapper'], function(debounce) {
         callFnWithDebounce(1)
         setTimeout(() => callFnWithDebounce(2),300)
 
-        console.log(result)
+        setTimeout(() => console.log(result),350)
 
 });
 ```
