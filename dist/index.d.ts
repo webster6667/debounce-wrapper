@@ -3,9 +3,9 @@ import { Debounce } from './types';
  * @description
  * Function wrapper, that cancels the previous function call, if time between previous and current call less than ms
  *
- * @param {number} fn - function that will be called after ms
+ * @param {Fn} fn - function that will be called after ms
  * @param {number} ms - time out, after which fn will call
- * @returns {boolean}
+ * @returns {NodeJS.Timeout}
  *
  * @example
  *

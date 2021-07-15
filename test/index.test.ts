@@ -68,6 +68,6 @@ test("debounce child function return timeout id", () => {
 
     jest.runAllTimers();
 
-    expect(timeout.id).toBeTruthy()
+    expect(timeout).toBeTruthy()
 
 });

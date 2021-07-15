@@ -145,14 +145,14 @@ Function wrapper, that cancels the previous function call, if time between previ
 
 #### Params
 - `fn`
-  - Type: `number`
+  - Type: `Fn`
   - Description: function that will be called after ms
 - `ms`
   - Type: `number`
   - Description: time out, after which fn will call
 
 #### Returns
-- `boolean`
+- `NodeJS.Timeout`
 
 #### Example
 ```JS
