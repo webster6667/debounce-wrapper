@@ -1,0 +1,1 @@
+export default function(r,t){var e;return function(){for(var n=this,u=arguments.length,a=new Array(u),o=0;o<u;o++)a[o]=arguments[o];var i=function(){r.apply(n,a)};return clearTimeout(e),e=setTimeout(i,t)}}
