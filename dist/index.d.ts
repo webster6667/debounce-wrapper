@@ -5,7 +5,7 @@ import { Debounce } from './types';
  *
  * @param {Fn} fn - function that will be called after ms
  * @param {number} ms - time out, after which fn will call
- * @returns {NodeJS.Timeout}
+ * @returns {ReturnedFn}
  *
  * @example
  *

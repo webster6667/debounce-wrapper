@@ -155,7 +155,7 @@ Function wrapper, that cancels the previous function call, if time between previ
   - Description: time out, after which fn will call
 
 #### Returns
-- `NodeJS.Timeout`
+- `ReturnedFn`
 
 #### Example
 ```JS

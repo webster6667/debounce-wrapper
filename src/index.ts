@@ -1,4 +1,4 @@
-import {Debounce, Fn} from './types'
+import {Debounce, Fn, ReturnedFn} from './types'
 
 /**
  * @description
@@ -6,7 +6,7 @@ import {Debounce, Fn} from './types'
  *
  * @param {Fn} fn - function that will be called after ms
  * @param {number} ms - time out, after which fn will call
- * @returns {NodeJS.Timeout}
+ * @returns {ReturnedFn}
  *
  * @example
  *
