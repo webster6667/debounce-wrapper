@@ -1,12 +1,12 @@
-import {Debounce, Fn, ReturnedFn} from './types'
+import {Debounce} from './types'
 
 /**
  * @description
  * Function wrapper, that cancels the previous function call, if time between previous and current call less than ms
  *
- * @param {Fn} fn - function that will be called after ms
+ * @param {Function} fn - function that will be called after ms
  * @param {number} ms - time out, after which fn will call
- * @returns {ReturnedFn}
+ * @returns {NodeJS.Timeout}
  *
  * @example
  *
@@ -14,16 +14,18 @@ import {Debounce, Fn, ReturnedFn} from './types'
  *     fn = (number) => result.push(number),
  *     callFnWithDebounce = debounce(fn, 500)
  *
- *     callFnWithDebounce(1)
+ *     const firstCallTimeoutId = callFnWithDebounce(1)
  *     setTimeout(() => callFnWithDebounce(2),300)
  *
  *     console.log(result) // => [2]
+ *     console.log(firstCallTimeoutId) // => 1, timeout id that you can clear, when you need 'clearTimeout(firstCallTimeoutId)'
  *
  */
+//@ts-ignore
 const debounce: Debounce = (fn, ms) => {
     let timeout: ReturnType<typeof setTimeout>
 
-    return function (...args) {
+    return function (...args: any) {
 
         const fnCall = () => { fn.apply(this, args) }
         clearTimeout(timeout);
@@ -35,4 +37,3 @@ const debounce: Debounce = (fn, ms) => {
 
 
 export default debounce
-
