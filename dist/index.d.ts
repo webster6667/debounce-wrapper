@@ -16,8 +16,13 @@ import { Debounce } from './types';
  *     const firstCallTimeoutId = callFnWithDebounce(1)
  *     setTimeout(() => callFnWithDebounce(2),300)
  *
- *     console.log(result) // => [2]
- *     console.log(firstCallTimeoutId) // => 1, timeout id that you can clear, when you need 'clearTimeout(firstCallTimeoutId)'
+ *     setTimeout(() => {
+ *
+ *       console.log(result) // => [2]
+ *       console.log(firstCallTimeoutId) // => 1, timeout id that you can clear, when you need 'clearTimeout(firstCallTimeoutId)'
+ *
+ *     }, 600)
+ *
  *
  */
 declare const debounce: Debounce;

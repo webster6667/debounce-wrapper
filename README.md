@@ -16,6 +16,7 @@
   - [Install](#install)
   - [Initialization](#initialization)
 - [Methods](#methods)
+  - [debounce](#debounce)
 
 ## Quick start
 
@@ -139,6 +140,40 @@ requirejs(['debounce-wrapper'], function(debounce) {
 ```
 
 ## Methods
+
+### debounce
+
+Function wrapper, that cancels the previous function call, if time between previous and current call less than ms
+
+
+#### Params
+- `fn`
+  - Type: `function`
+  - Description: function that will be called after ms
+- `ms`
+  - Type: `number`
+  - Description: time out, after which fn will call
+
+#### Returns
+- `NodeJS.Timeout`
+
+#### Example
+```JS
+let result = [],
+    fn = (number) => result.push(number),
+    callFnWithDebounce = debounce(fn, 500)
+
+    const firstCallTimeoutId = callFnWithDebounce(1)
+    setTimeout(() => callFnWithDebounce(2),300)
+
+    setTimeout(() => {
+
+      console.log(result) // => [2]
+      console.log(firstCallTimeoutId) // => 1, timeout id that you can clear, when you need 'clearTimeout(firstCallTimeoutId)'
+
+    }, 600)
+```
+
 
 
 ## Author

@@ -1,6 +1,6 @@
 {
   "name": "debounce-wrapper",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Function wrapper, that cancels the previous function call, if time between previous and current call less than ms",
   "main": "dist/index.cjs.js",
   "types": "dist/index.d.ts",

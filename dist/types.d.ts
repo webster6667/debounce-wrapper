@@ -1,1 +1,1 @@
-export declare type Debounce = <T extends Function>(fn: T, ms: number) => T;
+export declare type Debounce = <T extends any[]>(fn: (...args: T) => void, ms: number) => (...args: T) => ReturnType<typeof setTimeout>;

@@ -1,4 +1,5 @@
 import {Debounce} from './types'
+import * as yargsParser from "yargs-parser";
 
 /**
  * @description
@@ -17,15 +18,19 @@ import {Debounce} from './types'
  *     const firstCallTimeoutId = callFnWithDebounce(1)
  *     setTimeout(() => callFnWithDebounce(2),300)
  *
- *     console.log(result) // => [2]
- *     console.log(firstCallTimeoutId) // => 1, timeout id that you can clear, when you need 'clearTimeout(firstCallTimeoutId)'
+ *     setTimeout(() => {
+ *
+ *       console.log(result) // => [2]
+ *       console.log(firstCallTimeoutId) // => 1, timeout id that you can clear, when you need 'clearTimeout(firstCallTimeoutId)'
+ *
+ *     }, 600)
+ *
  *
  */
-//@ts-ignore
-const debounce: Debounce = (fn, ms) => {
+const debounce:Debounce = (fn, ms) => {
     let timeout: ReturnType<typeof setTimeout>
 
-    return function (...args: any) {
+    return function (...args) {
 
         const fnCall = () => { fn.apply(this, args) }
         clearTimeout(timeout);
@@ -34,6 +39,5 @@ const debounce: Debounce = (fn, ms) => {
         return timeout
     };
 }
-
 
 export default debounce
