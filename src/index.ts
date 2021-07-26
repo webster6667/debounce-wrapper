@@ -19,10 +19,11 @@ import * as yargsParser from "yargs-parser";
  *     setTimeout(() => callFnWithDebounce(2),300)
  *
  *     setTimeout(() => {
+ *      console.log(firstCallTimeoutId) // => 1, timeout id that you can clear, when you need 'clearTimeout(firstCallTimeoutId)'
+ *     }, 400)
  *
+ *     setTimeout(() => {
  *       console.log(result) // => [2]
- *       console.log(firstCallTimeoutId) // => 1, timeout id that you can clear, when you need 'clearTimeout(firstCallTimeoutId)'
- *
  *     }, 600)
  *
  *
